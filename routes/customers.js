@@ -27,8 +27,11 @@ router.get('/:id', async (req, res) => {
 // Create a customer
 router.post('/', async (req, res) => {
     const customer = new Customer({
-        name: req.body.name,
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
         email: req.body.email,
+        phone: req.body.phone,
+        address: req.body.address,
     });
 
     try {
