@@ -27,10 +27,12 @@ router.get('/:id', async (req, res) => {
 // Create a contact
 router.post('/', async (req, res) => {
     const contact = new Contact({
-        name: req.body.name,
-        email: req.body.email,
+        customerId: req.body.customerId,
+        contact_date: req.body.contact_date,
+        contact_method: req.body.contact_method,
+        notes: req.body.notes,
     });
-
+    
     try {
         const newContact = await contact.save();
         res.status(201).json(newContact);

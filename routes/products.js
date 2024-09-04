@@ -27,8 +27,9 @@ router.get('/:id', async (req, res) => {
 // Create a product
 router.post('/', async (req, res) => {
     const product = new Product({
-        name: req.body.name,
-        email: req.body.email,
+        product_name: req.body.product_name,
+        description: req.body.description,
+        price: req.body.price,
     });
 
     try {

@@ -27,8 +27,10 @@ router.get('/:id', async (req, res) => {
 // Create a sale
 router.post('/', async (req, res) => {
     const sale = new Sale({
-        name: req.body.name,
-        email: req.body.email,
+        customerId: req.body.customerId,
+        productId: req.body.productId,
+        dateofsale: req.body.dateofsale,
+        amount: req.body.amount,
     });
 
     try {
